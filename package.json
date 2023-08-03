@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "mogoose": "^0.0.1-security",
+    "mongodb": "^5.7.0"
+  }
+}
