@@ -3,7 +3,7 @@ spring:
     driver-class-name: org.mariadb.jdbc.Driver
     url: jdbc:mariadb://34.69.229.31:3306/mango
     username: root
-    password:
+    password: J&2Q[vZ6C4,R)0Ja
   jpa:
     show-sql: true
     hibernate:

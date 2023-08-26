@@ -19,6 +19,12 @@ public class RecordsPostApiController {
         return recordsService.fetchAllRecords();
     }
 
+    @GetMapping("/fetch-record/{recordId}")
+    public Records fetchRecordById(@PathVariable Long recordId) {
+        return recordsService.fetchRecordById(recordId);
+    }
+
+
     @PostMapping("/add-record")
     public Long createRecord(@RequestBody RecordsSaveRequestDto requestDto) {
         return recordsService.save(requestDto);

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>새로운 여행 기록</title>
+    <link href="/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/album/">
+<!--    <link rel ="stylesheet" href="./headers.css">-->
+
+    <script> var recordId = null;</script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./js/record-functions.js"></script>
+    <script src="./js/date_content.js" type="text/javascript" defer></script>
+
+
+</head>
+<body>
+<h1 class="fw-light">여행 기록</h1>
+
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h2>관련 계획</h2>
+            <label for="plans">관련 계획:</label>
+            <select id="plans">
+                <option value="">선택하세요</option>
+                <option value="plan1">계획 1</option>
+                <option value="plan2">계획 2</option>
+                <option value="plan3">계획 3</option>
+                <option value="plan3">계획 없음</option>
+            </select>
+        </div>
+    </div>
+</section>
+
+<div class="album py-5 bg-light">
+    <div class="container">
+<!--        <p> <div class ="description">/*계획 선택시 기본정보 자동 채워지도록.<br>"계획 없음" 선택시 기본정보 사용자가 채워야함*/</div></p>-->
+        <h2>기본 정보</h2>
+        <form id="recordForm" onsubmit="event.preventDefault(); handleFormSubmit();">
+            <div class="input-row">
+                <label for="recordTitle">제목:
+                    <input type="text" id="recordTitle" value="기본 제목">
+                </label>
+                <label for="location">장소:
+                    <input type="text" id="location" value="기본 장소">
+                </label>
+                <label for="startDate">startDate:
+                    <input type="date" id="startDate">
+                </label>
+                <label for="endDate">endDate:
+                    <input type="date" id="endDate">
+                </label>
+                <input type="submit" value="저장">
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+            </div>
+        </form>
+
+        <h2>Cost</h2>
+        <p> <div class ="description">/*비용 관련 들어갈 부분*/</div></p>
+
+        <button onclick="alert(recordId);">Show recordId</button>
+
+
+
+        <h2>본문</h2>
+        <button id="make-template" onClick="generateContentsFields(recordId)">템플릿 생성</button>
+        <div class="empty-space"></div>
+    </div>
+</div>
+
+
+
+
+</body>
+</html>

@@ -1,42 +1,56 @@
 package com.mycompany.myproject.domain.posts;
 
-import com.mycompany.myproject.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Date;
 
+@Entity
 @Getter
 @NoArgsConstructor
-@Entity
-public class RecordContent extends BaseTimeEntity {
+//@Table(name = "RECORD_CONTENT")
+public class RecordContent {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer date;
+    @Column(name = "record_content_id")
+    private Long recordContentId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "record_id")
-    private Records record;
+    private Records records;
 
-    @Column(columnDefinition = "TEXT")
+    @Column(columnDefinition = "content")
     private String content;
 
-    @Column(length = 255)
     private String hashtag;
 
-    @OneToMany(mappedBy = "record", cascade = CascadeType.ALL)
-    private List<RecordContent> recordContents = new ArrayList<>();
-    //record_content 테이블과의 관계 나타내줘야한다
+
+    @Temporal(TemporalType.DATE)
+    @Column(nullable = false)
+    private Date date;
 
     @Builder
-    public RecordContent(Integer date, Records record, String content, String hashtag) {
+    public RecordContent(Records records, String content, String hashtag, Date date) {
+        this.records = records;
+        this.content = content;
+        this.hashtag = hashtag;
         this.date = date;
-        this.record = record;
+    }
+
+    public void update(Records records, String content, String hashtag, Date date) {
+        this.records = records;
+        this.content = content;
+        this.hashtag = hashtag;
+        this.date = date;
+
+    }
+
+    public void update(String content, String hashtag) {
         this.content = content;
         this.hashtag = hashtag;
     }
+
 }

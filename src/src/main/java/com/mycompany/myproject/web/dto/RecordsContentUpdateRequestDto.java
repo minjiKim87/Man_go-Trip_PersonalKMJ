@@ -10,15 +10,17 @@ import java.util.Date;
 
 @Getter
 @NoArgsConstructor
-public class RecordsContentSaveRequestDto {
+public class RecordsContentUpdateRequestDto {
 
+    private Long recordContentId;
     private Long recordId;
     private Date date;
     private String content;
     private String hashtag;
 
     @Builder
-    public RecordsContentSaveRequestDto(Long recordId, String content, String hashtag, Date date) {
+    public RecordsContentUpdateRequestDto(Long recordContentId, Long recordId, String content, String hashtag, Date date) {
+        this.recordContentId = recordContentId;
         this.recordId = recordId;
         this.content = content;
         this.hashtag = hashtag;
@@ -33,4 +35,5 @@ public class RecordsContentSaveRequestDto {
                 .hashtag(hashtag)
                 .build();
     }
+
 }

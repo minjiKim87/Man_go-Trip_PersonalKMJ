@@ -1,5 +1,6 @@
 package com.mycompany.myproject.service;
 
+import com.mycompany.myproject.domain.posts.RecordContent;
 import com.mycompany.myproject.domain.posts.Records;
 import com.mycompany.myproject.domain.posts.RecordsPostsRepository;
 import com.mycompany.myproject.web.dto.RecordsSaveRequestDto;
@@ -37,5 +38,15 @@ public class RecordsService {
                 .orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다. id=" +  recordId));
         recordsPostsRepository.delete(records);
     }
+
+    @Transactional(readOnly = true)
+    public Records fetchRecordById(Long recordId) {
+        return recordsPostsRepository.findById(recordId)
+                .orElseThrow(() -> new IllegalArgumentException("해당 기록이 없습니다. id=" + recordId));
+    }
+
+
+
 }
+
 
