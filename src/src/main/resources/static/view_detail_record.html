@@ -31,6 +31,9 @@
 
         <h2>본문</h2>
         <p><span id="content"></span></p>
+
+        <a id="updateButton" class="btn btn-primary">수정</a>
+
     </div>
 </div>
 <script>
@@ -38,6 +41,10 @@
 
     var urlParams = new URLSearchParams(window.location.search);
     var recordId = urlParams.get('recordId');
+    var url = "update_record.html?recordId=" + encodeURIComponent(recordId);
+    document.getElementById('updateButton').href = url;
+
+    //alert(recordId); // 확인용
 
     $.get("/fetch-record/" + recordId, function (data) {
 
@@ -50,8 +57,21 @@
         $('#endDate').text(endDate.toLocaleDateString());
 
 
-        // $('#content').text(data.content);
     });
+
+    //record-content를 가져오기 위한 부분
+
+$.get("/fetch-record-content/" + recordId, function (data) {
+    var contentHTML = "";
+    for (var i = 0; i < data.length; i++) {
+        contentHTML += "<p><b>" + data[i].date + "</b>: " + data[i].content + "</p>";
+    }
+    $('#content').html(contentHTML);
+});
+
+
+
+
 });
 
 </script>
