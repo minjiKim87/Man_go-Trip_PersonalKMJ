@@ -74,7 +74,7 @@
 <img src="https://github.com/minjiKim87/Man_go-Trip_PersonalKMJ/assets/68892132/e3aedfcf-6c8c-4d37-bc5a-526f439f05a7" width="90%">
 
 ### 여행 계획
-<img src="https://github.com/minjiKim87/Man_go-Trip_PersonalKMJ/assets/68892132/1d79045e-be21-4a5e-baab-3a7766d9f4e8" width="50%">
+<img src="https://github.com/minjiKim87/Man_go-Trip_PersonalKMJ/assets/68892132/1d79045e-be21-4a5e-baab-3a7766d9f4e8" width="90%">
 
 ### 여행 기록
 
@@ -84,7 +84,7 @@
 
 ### 여행 정보
 
-<img src="https://github.com/minjiKim87/Man_go-Trip_PersonalKMJ/assets/68892132/d12c800c-754c-40bd-a7f9-5683ede24372" width="50%">
+<img src="https://github.com/minjiKim87/Man_go-Trip_PersonalKMJ/assets/68892132/d12c800c-754c-40bd-a7f9-5683ede24372" width="90%">
 
 # 추가
 
