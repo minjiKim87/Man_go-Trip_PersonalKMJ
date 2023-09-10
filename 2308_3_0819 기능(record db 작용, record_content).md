@@ -40,7 +40,7 @@ a. html에서 전역변수로 recordId 선언
         
    <img width="50%" src="https://github.com/minjiKim87/SpringAWS_Study/assets/68892132/b3aba577-aea5-4bc1-b861-1864dfca26d5.png"/>
 
-add-record → 컨트롤러 통해서 → RecordsService
+- add-record → 컨트롤러 통해서 → RecordsService
         
             
             ```java
@@ -52,18 +52,18 @@ add-record → 컨트롤러 통해서 → RecordsService
                 }
             ```
   
-여기서 recordId를 리턴하도록 짜놨는데, response.recordId로 접근하려니까 계속 받아지지가 않았음. response그 자체가 recordId였음 
+- 여기서 recordId를 리턴하도록 짜놨는데, response.recordId로 접근하려니까 계속 받아지지가 않았음. response그 자체가 recordId였음 
 
-record-functions.js에서 받아진 recordId
+- record-functions.js에서 받아진 recordId
             
 <img width="50%" src="https://github.com/minjiKim87/SpringAWS_Study/assets/68892132/475e1158-761b-4350-a06e-6966de48ae21.png"/>
 
-html페이지의 전역변수에 잘 할당되었나(show recordId 버튼으로 alert)
+- html페이지의 전역변수에 잘 할당되었나(show recordId 버튼으로 alert)
 
             
 <img width="50%" src="https://github.com/minjiKim87/SpringAWS_Study/assets/68892132/4f17cc92-f04a-4c31-a5af-df709dc605bc.png"/>
 
-그 recordId가 record_content에 전달이 되었나
+- 그 recordId가 record_content에 전달이 되었나
 
             
 <img width="50%" src="https://github.com/minjiKim87/SpringAWS_Study/assets/68892132/4616d0de-0ca2-4388-a915-968cbe39dbcb.png"/>
