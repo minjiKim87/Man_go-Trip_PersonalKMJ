@@ -28,16 +28,16 @@
 
     
 2. 이때 recordId는 record_content 테이블에서 활용하기 위해 필요함
-    1. html에서 전역변수로 recordId 선언
+    a. html에서 전역변수로 recordId 선언
         
 <img width="50%" src="https://github.com/minjiKim87/SpringAWS_Study/assets/68892132/42b64094-125a-45b0-b9d2-2d2ebc34cd5c.png"/>
 
-        
-    2. 서비스 코드 상 서버에서 받은 response응답이 곧 recordId임. 전역변수 recordId에 값을 넣어줌
+    b. 서비스 코드 상 서버에서 받은 response응답이 곧 recordId임. 전역변수 recordId에 값을 넣어줌
         
    <img width="50%" src="https://github.com/minjiKim87/SpringAWS_Study/assets/68892132/b3aba577-aea5-4bc1-b861-1864dfca26d5.png"/>
 
         - add-record → 컨트롤러 통해서 → RecordsService
+        
             
             ```java
             public Long update(Long recordId, RecordsSaveRequestDto requestDto) {
@@ -47,21 +47,27 @@
                     return recordId;
                 }
             ```
+
             
             여기서 recordId를 리턴하도록 짜놨는데, response.recordId로 접근하려니까 계속 받아지지가 않았음. response그 자체가 recordId였음 
+
             
         - record-functions.js에서 받아진 recordId
             
     <img width="50%" src="https://github.com/minjiKim87/SpringAWS_Study/assets/68892132/475e1158-761b-4350-a06e-6966de48ae21.png"/>
 
+
             
         - html페이지의 전역변수에 잘 할당되었나(show recordId 버튼으로 alert)
+
             
         <img width="50%" src="https://github.com/minjiKim87/SpringAWS_Study/assets/68892132/4f17cc92-f04a-4c31-a5af-df709dc605bc.png"/>
+
 
             
         
         - 그 recordId가 record_content에 전달이 되었나
+
             
        <img width="50%" src="https://github.com/minjiKim87/SpringAWS_Study/assets/68892132/4616d0de-0ca2-4388-a915-968cbe39dbcb.png"/>
 
@@ -119,7 +125,8 @@ Dto를 만들때 문제였음
 
 1. 여기서 적다가 중간에 내용저장을 눌렀어. 이어서 작성하고 또 내용저장을 누르면 새로운 행을 insert하는게 아니라, 기존의 행을 update해야함
     
-    ![Untitled](0819%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC(record%20db%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%AD%E1%86%BC,%20record_content)%203fe3097d129b4d36b29b3ff6d20cdb37/Untitled%2010.png)
+    <img width="50%" src="https://github.com/minjiKim87/SpringAWS_Study/assets/68892132/9b659ca3-bb63-43e3-9bfa-46de3bde3bd0.png"/>
+
     
 
 1. 아직 멀었지만 나중에 이미 있는 record를 불러와서 수정할때(이건 또 언제..ㅎㅎ;;) 이미 있는 값을 업데이트 해야함
