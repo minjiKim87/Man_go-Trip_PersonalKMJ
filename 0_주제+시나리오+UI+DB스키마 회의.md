@@ -71,19 +71,20 @@
 
 ### 메인 페이지
 
-<img src="https://github.com/minjiKim87/Man_go-Trip_PersonalKMJ/assets/68892132/e3aedfcf-6c8c-4d37-bc5a-526f439f05a7" width="50%">
+<img src="https://github.com/minjiKim87/Man_go-Trip_PersonalKMJ/assets/68892132/e3aedfcf-6c8c-4d37-bc5a-526f439f05a7" width="90%">
 
 ### 여행 계획
-
-![2306~2307%20%E1%84%88%E1%85%A7%E1%84%83%E1%85%A2%20%E1%84%92%E1%85%AC%E1%84%8B%E1%85%B4%20%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%B5%200397baad8d604cef96aa1ef7068b5a21/image2.png](2306~2307%20%E1%84%88%E1%85%A7%E1%84%83%E1%85%A2%20%E1%84%92%E1%85%AC%E1%84%8B%E1%85%B4%20%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%B5%200397baad8d604cef96aa1ef7068b5a21/image2.png)
+<img src="https://github.com/minjiKim87/Man_go-Trip_PersonalKMJ/assets/68892132/1d79045e-be21-4a5e-baab-3a7766d9f4e8" width="50%">
 
 ### 여행 기록
 
-![2306~2307%20%E1%84%88%E1%85%A7%E1%84%83%E1%85%A2%20%E1%84%92%E1%85%AC%E1%84%8B%E1%85%B4%20%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%B5%200397baad8d604cef96aa1ef7068b5a21/image1.png](2306~2307%20%E1%84%88%E1%85%A7%E1%84%83%E1%85%A2%20%E1%84%92%E1%85%AC%E1%84%8B%E1%85%B4%20%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%B5%200397baad8d604cef96aa1ef7068b5a21/image1.png)
+
+<img src="https://github.com/minjiKim87/Man_go-Trip_PersonalKMJ/assets/68892132/d97cbdcc-df57-4de7-a39c-a69fd495fe4b" width="50%">
+
 
 ### 여행 정보
 
-![2306~2307%20%E1%84%88%E1%85%A7%E1%84%83%E1%85%A2%20%E1%84%92%E1%85%AC%E1%84%8B%E1%85%B4%20%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%B5%200397baad8d604cef96aa1ef7068b5a21/image4.png](2306~2307%20%E1%84%88%E1%85%A7%E1%84%83%E1%85%A2%20%E1%84%92%E1%85%AC%E1%84%8B%E1%85%B4%20%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%B5%200397baad8d604cef96aa1ef7068b5a21/image4.png)
+<img src="https://github.com/minjiKim87/Man_go-Trip_PersonalKMJ/assets/68892132/d12c800c-754c-40bd-a7f9-5683ede24372" width="50%">
 
 # 추가
 
@@ -102,11 +103,13 @@
 
 ## UI
 
-![2306~2307%20%E1%84%88%E1%85%A7%E1%84%83%E1%85%A2%20%E1%84%92%E1%85%AC%E1%84%8B%E1%85%B4%20%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%B5%200397baad8d604cef96aa1ef7068b5a21/image6.jpg](2306~2307%20%E1%84%88%E1%85%A7%E1%84%83%E1%85%A2%20%E1%84%92%E1%85%AC%E1%84%8B%E1%85%B4%20%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%B5%200397baad8d604cef96aa1ef7068b5a21/image6.jpg)
+<img src="https://github.com/minjiKim87/Man_go-Trip_PersonalKMJ/assets/68892132/0b85b8c9-d180-42e7-9a44-7cd5400b1170" width="50%">
 
-![2306~2307%20%E1%84%88%E1%85%A7%E1%84%83%E1%85%A2%20%E1%84%92%E1%85%AC%E1%84%8B%E1%85%B4%20%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%B5%200397baad8d604cef96aa1ef7068b5a21/image9.jpg](2306~2307%20%E1%84%88%E1%85%A7%E1%84%83%E1%85%A2%20%E1%84%92%E1%85%AC%E1%84%8B%E1%85%B4%20%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%B5%200397baad8d604cef96aa1ef7068b5a21/image9.jpg)
+<img src="https://github.com/minjiKim87/Man_go-Trip_PersonalKMJ/assets/68892132/71d05158-b03d-4e21-bce9-5ce42f7a3c44" width="50%">
 
-![2306~2307%20%E1%84%88%E1%85%A7%E1%84%83%E1%85%A2%20%E1%84%92%E1%85%AC%E1%84%8B%E1%85%B4%20%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%B5%200397baad8d604cef96aa1ef7068b5a21/image8.jpg](2306~2307%20%E1%84%88%E1%85%A7%E1%84%83%E1%85%A2%20%E1%84%92%E1%85%AC%E1%84%8B%E1%85%B4%20%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%B5%200397baad8d604cef96aa1ef7068b5a21/image8.jpg)
+
+
+<img src="https://github.com/minjiKim87/Man_go-Trip_PersonalKMJ/assets/68892132/bb61765b-20fb-4b91-8d5e-8b0acc3be967" width="50%">
 
 흐름
 
@@ -115,7 +118,7 @@
 - 새로만들기 (로그인 x시 로그인페이지 -> 여행기록 페이지)
 - 상세 view 클릭 -> 수정하기(->임시저장->휘발성flash 메시지->기존 편집 화면 / 저장->여행 상세보기view) / 삭제하기(with 팝업창)
 
-![2306~2307%20%E1%84%88%E1%85%A7%E1%84%83%E1%85%A2%20%E1%84%92%E1%85%AC%E1%84%8B%E1%85%B4%20%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%B5%200397baad8d604cef96aa1ef7068b5a21/image7.png](2306~2307%20%E1%84%88%E1%85%A7%E1%84%83%E1%85%A2%20%E1%84%92%E1%85%AC%E1%84%8B%E1%85%B4%20%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%B5%200397baad8d604cef96aa1ef7068b5a21/image7.png)
+<img src="https://github.com/minjiKim87/Man_go-Trip_PersonalKMJ/assets/68892132/c0e62a1e-f2aa-417d-bde8-55cdbd066aff" width="50%">
 
 ## 추가 고민
 
@@ -209,7 +212,7 @@
 
 [trip](https://www.erdcloud.com/d/WXpvfeaSCdjnedrmN)
 
-![trip.png](2306~2307%20%E1%84%88%E1%85%A7%E1%84%83%E1%85%A2%20%E1%84%92%E1%85%AC%E1%84%8B%E1%85%B4%20%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%B5%200397baad8d604cef96aa1ef7068b5a21/trip.png)
+<img src="https://github.com/minjiKim87/Man_go-Trip_PersonalKMJ/assets/68892132/85dbc2c6-e5fa-4272-9202-b11d758e0f39" width="90%">
 
 | USER |  |  |  |  |  |  |  |
 | --- | --- | --- | --- | --- | --- | --- | --- |
