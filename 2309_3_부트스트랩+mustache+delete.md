@@ -17,9 +17,9 @@
 
 [다운로드](https://getbootstrap.kr/docs/5.3/getting-started/download/)
 
-1. 파일 헤더에 추가
+2. 파일 헤더에 추가
 
-1. `npm install bootstrap@5.3.1`
+3. `npm install bootstrap@5.3.1`
 
 <img src="https://github.com/minjiKim87/SpringAWS_Study/assets/68892132/858b8a2e-3ff8-47ad-b94e-bf9e0b533ad7.png" alt="Untitled 2" width="50%">
 
@@ -70,7 +70,7 @@ public class IndexControllerTest {
 }
 ```
 
-1. IndexController(java/…/web)
+3. IndexController(java/…/web)
 
 ```java
 package com.mycompany.myproject.web;
@@ -88,7 +88,7 @@ public class IndexController {
 }
 ```
 
-1. 머스태치 파일들
+4. 머스태치 파일들
 
 <aside>
 💡 경로 주의!!!! 자동으로 해주니까 무조건 **`src/main/resources/templates`** 폴더 아래
@@ -137,7 +137,7 @@ public class IndexController {
 {{> layout/footer }}
 ```
 
-1. Security해제
+5. Security해제
 
 <aside>
 💡 해제 안했더니 테스트에서 자동으로 계속 로그인페이지로 가니까 통과 안되고, 어플리케이션 실행 후 링크접속했을때 안되더라
@@ -185,7 +185,7 @@ mustache로 바꾸면서 수정이 잘 안됨
 
 DB에 반영이 안되는 문제
 
-잘 안되서 delete도 안되길래 해결하자 →
+delete도 안되길래 먼저 해결시도 →
 
 ## delete 안되는 문제
 
@@ -202,8 +202,11 @@ Request method 'GET' not supported
 </aside>
 
 네트워크 창에서 보면 url/id 는 잘 넘겨주는데 
+
 url이나 매핑도 잘 다 해놓은거같고 get을 안쓰는것 같은데 계속 get을 쓴다.
+
 코드 검토 시 get을 쓰는 부분은 없어보이는데, 아마 관련 부분에서 구현을 잘못한것 같다.
+
 
 
 <img src="https://github.com/minjiKim87/SpringAWS_Study/assets/68892132/0872c341-7754-4053-a8d1-aae0cff02a3f.png" alt="Untitled 6" width="50%">
@@ -218,7 +221,7 @@ url이나 매핑도 잘 다 해놓은거같고 get을 안쓰는것 같은데 계
 
 <img src="https://github.com/minjiKim87/SpringAWS_Study/assets/68892132/16e67717-4703-44ba-894b-7106bb71acc7.png" alt="Untitled 8" width="50%">
 
-1. js 파일에서 record-content 함수를 만들어두고, 버튼 눌렀을때 먼저 recordcontent삭제 하고 record 삭제하도록 함
+2. js 파일에서 record-content 함수를 만들어두고, 버튼 눌렀을때 먼저 recordcontent삭제 하고 record 삭제하도록 함
     
     ```java
     window.deleteRecordContent = function(recordId) {
@@ -264,7 +267,7 @@ url이나 매핑도 잘 다 해놓은거같고 get을 안쓰는것 같은데 계
     ```
     
 
-1. 실행하면 delete-record-content랑 delete-record   두개가 작동이 됨 
+3. 실행하면 delete-record-content랑 delete-record   두개가 작동이 됨 
 - record-content
     - 컨트롤러
     
@@ -347,6 +350,9 @@ url이나 매핑도 잘 다 해놓은거같고 get을 안쓰는것 같은데 계
         
         1. 그러고 그 리스트를 전부 삭제함
 
+
+
+
     코멘트 : cascade 선언하면 자동으로 되니까 시도해봐! -> 이 생각을 못했다, 해보자
 ```
 @Entity
@@ -357,8 +363,9 @@ public class Records {
     private List<RecordContent> recordContents;
 }
 ```
+
+ # 할것
     
-    # 할것
-    
-    1. 원래 했었는데 수정 반영 안되는것(여기는 mustache로 바꿔주면서 생긴 경로 문제 같기는 하다)
+    1. 수정 반영 다시 안되는것(여기는 mustache로 바꿔주면서 생긴 경로 문제 같기는 하다)
     2. 부트스트랩 css 적용
+    3. cost 담당과 파일 합치는 시도해보기
