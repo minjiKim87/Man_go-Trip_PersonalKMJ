@@ -1,11 +1,5 @@
 
 
-[여행 기록 api 작성](https://www.notion.so/api-9adddac1291e423ca0ecbcb25d46462e?pvs=21) 
-
-[전체 DB 스키마 작성](https://www.notion.so/DB-d3259f99a9664ad2bd78508ece5ceed0?pvs=21) 
-
-[Record 뼈대](https://www.notion.so/Record-3ceba1ecb4864ff8aeacb7f60e0fafaf?pvs=21) 
-
 # USE CASE 시나리오
 
 | 여행 계획 | 목표 : 사용자는 여행 계획을 작성 및 저장할 수 있어야 한다.
