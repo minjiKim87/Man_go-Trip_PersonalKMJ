@@ -29,7 +29,8 @@
     
 2. 이때 recordId는 record_content 테이블에서 활용하기 위해 필요함
 
-3. 
+30
+
 a. html에서 전역변수로 recordId 선언
 
 <img width="50%" src="https://github.com/minjiKim87/SpringAWS_Study/assets/68892132/42b64094-125a-45b0-b9d2-2d2ebc34cd5c.png"/>
@@ -40,14 +41,14 @@ b. 서비스 코드 상 서버에서 받은 response응답이 곧 recordId임. �
 
 - add-record → 컨트롤러 통해서 → RecordsService
 
-```java
+    ```java
 public Long update(Long recordId, RecordsSaveRequestDto requestDto) {
     Records records = recordsPostsRepository.findById(recordId)
         .orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다. id=" +  recordId));
     records.update(requestDto.getRecordTitle(), requestDto.getLocation(), requestDto.getStartDate(), requestDto.getEndDate());
     return recordId;
 }
-
+```
             
             여기서 recordId를 리턴하도록 짜놨는데, response.recordId로 접근하려니까 계속 받아지지가 않았음. response그 자체가 recordId였음 
 
