@@ -1,6 +1,8 @@
 # 0819 기능(record db 작용, record_content)
 
-![Untitled](0819%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC(record%20db%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%AD%E1%86%BC,%20record_content)%203fe3097d129b4d36b29b3ff6d20cdb37/Untitled.png)
+<img width="50%" src="https://github.com/minjiKim87/SpringAWS_Study/assets/68892132/6ba33136-ac8d-432f-8720-441c185521d3.png"/>
+
+
 
 데이터베이스랑 테이블의 컬럼이나 타입 일치문제, 변수명 등으로 엄청 오래걸림
 
@@ -8,28 +10,33 @@
 
 1. new_travel_record.html 접속 - 기본 정보(제목/장소/날짜들)입력 
     
-    ![Untitled](0819%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC(record%20db%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%AD%E1%86%BC,%20record_content)%203fe3097d129b4d36b29b3ff6d20cdb37/Untitled%201.png)
+<img width="50%" src="https://github.com/minjiKim87/SpringAWS_Study/assets/68892132/d3592edf-8f44-4343-af69-99c45306c605.png"/>
+
     
 
 # 2. Record Id 전달 문제
 
-![Untitled](0819%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC(record%20db%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%AD%E1%86%BC,%20record_content)%203fe3097d129b4d36b29b3ff6d20cdb37/Untitled%202.png)
+<img width="50%" src="https://github.com/minjiKim87/SpringAWS_Study/assets/68892132/89dcda68-ff3a-4403-a5ef-75032db3db84.png"/>
+
 
 1. 기본정보 저장을 누르면 record-functions.js - handleFormSubmit함수 호출 : db에 save
     
-    ![Untitled](0819%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC(record%20db%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%AD%E1%86%BC,%20record_content)%203fe3097d129b4d36b29b3ff6d20cdb37/Untitled%203.png)
+ <img width="50%" src="https://github.com/minjiKim87/SpringAWS_Study/assets/68892132/f40c77fd-0f80-4e00-997b-49a91aac5ef5.png"/>
+
     
-    ![Untitled](0819%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC(record%20db%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%AD%E1%86%BC,%20record_content)%203fe3097d129b4d36b29b3ff6d20cdb37/Untitled%204.png)
+  <img width="50%" src="https://github.com/minjiKim87/SpringAWS_Study/assets/68892132/8bf22700-5e9b-44d9-bd79-1eaf505bd15a.png"/>
+
     
 2. 이때 recordId는 record_content 테이블에서 활용하기 위해 필요함
     1. html에서 전역변수로 recordId 선언
         
-        ![Untitled](0819%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC(record%20db%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%AD%E1%86%BC,%20record_content)%203fe3097d129b4d36b29b3ff6d20cdb37/Untitled%205.png)
+<img width="50%" src="https://github.com/minjiKim87/SpringAWS_Study/assets/68892132/42b64094-125a-45b0-b9d2-2d2ebc34cd5c.png"/>
+
         
     2. 서비스 코드 상 서버에서 받은 response응답이 곧 recordId임. 전역변수 recordId에 값을 넣어줌
         
-        ![Untitled](0819%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC(record%20db%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%AD%E1%86%BC,%20record_content)%203fe3097d129b4d36b29b3ff6d20cdb37/Untitled%206.png)
-        
+   <img width="50%" src="https://github.com/minjiKim87/SpringAWS_Study/assets/68892132/b3aba577-aea5-4bc1-b861-1864dfca26d5.png"/>
+
         - add-record → 컨트롤러 통해서 → RecordsService
             
             ```java
@@ -45,22 +52,25 @@
             
         - record-functions.js에서 받아진 recordId
             
-            ![Untitled](0819%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC(record%20db%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%AD%E1%86%BC,%20record_content)%203fe3097d129b4d36b29b3ff6d20cdb37/Untitled%207.png)
+    <img width="50%" src="https://github.com/minjiKim87/SpringAWS_Study/assets/68892132/475e1158-761b-4350-a06e-6966de48ae21.png"/>
+
             
         - html페이지의 전역변수에 잘 할당되었나(show recordId 버튼으로 alert)
             
-            ![Untitled](0819%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC(record%20db%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%AD%E1%86%BC,%20record_content)%203fe3097d129b4d36b29b3ff6d20cdb37/Untitled%208.png)
+        <img width="50%" src="https://github.com/minjiKim87/SpringAWS_Study/assets/68892132/4f17cc92-f04a-4c31-a5af-df709dc605bc.png"/>
+
             
         
         - 그 recordId가 record_content에 전달이 되었나
             
-            ![Untitled](0819%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC(record%20db%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%AD%E1%86%BC,%20record_content)%203fe3097d129b4d36b29b3ff6d20cdb37/Untitled%209.png)
+       <img width="50%" src="https://github.com/minjiKim87/SpringAWS_Study/assets/68892132/4616d0de-0ca2-4388-a915-968cbe39dbcb.png"/>
+
             
     
 
 # 3. 템플릿 생성
 
-![Untitled](0819%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC(record%20db%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%AD%E1%86%BC,%20record_content)%203fe3097d129b4d36b29b3ff6d20cdb37/Untitled%2010.png)
+<img width="50%" src="https://github.com/minjiKim87/SpringAWS_Study/assets/68892132/e4bd8560-061d-4e43-a8a2-fd20fa772023.png"/>
 
 기본 정보의 날짜에 따라서 템플릿 생성 : data_content.js에서.
 
@@ -68,7 +78,8 @@
 
 각각의 content를 받아서 record_content 테이블에 insert함
 
-![Untitled](0819%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC(record%20db%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%AD%E1%86%BC,%20record_content)%203fe3097d129b4d36b29b3ff6d20cdb37/Untitled%2011.png)
+<img width="50%" src="https://github.com/minjiKim87/SpringAWS_Study/assets/68892132/21daabdd-f7c3-461d-8061-f99c4fec9d99.png"/>
+
 
 1. 이제 도메인, 서비스, 디토, 컨트롤러를 싹 새로 만듦… 
 
@@ -96,7 +107,8 @@ Dto를 만들때 문제였음
 
 레코드 id - 각 날짜에 대해서 content가 각각 들어가고, 주키는 record_content_id로 구분이 된다
 
-![Untitled](0819%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC(record%20db%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%AD%E1%86%BC,%20record_content)%203fe3097d129b4d36b29b3ff6d20cdb37/Untitled%2012.png)
+<img width="50%" src="https://github.com/minjiKim87/SpringAWS_Study/assets/68892132/58bebe0c-d0c1-44c9-ad49-5895c8c812d5.png"/>
+
 
 # 5. 하는중=막힌것 : record_content 업데이트
 
@@ -120,7 +132,8 @@ Dto를 만들때 문제였음
 1. date_content.js에서 recordId와 date가 같은 행들이 존재하면 update
 2. 존재하지 않으면 save로.
 
-![Untitled](0819%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC(record%20db%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%AD%E1%86%BC,%20record_content)%203fe3097d129b4d36b29b3ff6d20cdb37/Untitled%2013.png)
+<img width="50%" src="https://github.com/minjiKim87/SpringAWS_Study/assets/68892132/eb5a2449-99cd-4b12-841b-5f538dbac3cb.png"/>
+
 
 <aside>
 💡 추가되는 것들
