@@ -1,4 +1,4 @@
-# 2306~2307 뼈대 회의 정리
+
 
 [여행 기록 api 작성](https://www.notion.so/api-9adddac1291e423ca0ecbcb25d46462e?pvs=21) 
 
