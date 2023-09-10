@@ -71,7 +71,7 @@
 
 ### 메인 페이지
 
-![2306~2307%20%E1%84%88%E1%85%A7%E1%84%83%E1%85%A2%20%E1%84%92%E1%85%AC%E1%84%8B%E1%85%B4%20%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%B5%200397baad8d604cef96aa1ef7068b5a21/image3.png](2306~2307%20%E1%84%88%E1%85%A7%E1%84%83%E1%85%A2%20%E1%84%92%E1%85%AC%E1%84%8B%E1%85%B4%20%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%B5%200397baad8d604cef96aa1ef7068b5a21/image3.png)
+<img src="https://github.com/minjiKim87/Man_go-Trip_PersonalKMJ/assets/68892132/e3aedfcf-6c8c-4d37-bc5a-526f439f05a7" width="50%">
 
 ### 여행 계획
 
