@@ -3,8 +3,11 @@
 # 1. record_content
 
 <img src="https://github.com/minjiKim87/SpringAWS_Study/assets/68892132/9fc67c7b-c5cb-4f34-a74f-15a7ef78a801.png" alt="Untitled" width="50%">
+
 - 기본정보 제목/장소/날짜 입력하면 DB에 반영 후 날짜에 따라 템플릿 생성하는것(저번까지 함)
+
 - 세부정보 입력-내용 저장누르면 record_content 여행기록 세부 내용 테이블에 입력됨
+
 - 다시 내용 수정하고, 내용저장 또 눌렀을때 update 하는것 성공(전에는 계속 새로운 content id를 가지는 행을 add 했었음)
 
 - 9번 부분 보면 update 성공
