@@ -1,0 +1,61 @@
+{{>layout/header}}
+<title>여행 기록 리스트</title>
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="js/view_record_list.js"></script>
+</head>
+
+<body>
+
+{{>layout/nav}}
+
+
+<h1>여행 기록 리스트</h1>
+<div class="container">
+    <h2>간단 여행기록 추가</h2>
+
+    <div class="container">
+        <form id="recordForm">
+            <div class="input-row">
+                <label for="recordTitle">제목:
+                    <input type="text" id="recordTitle" value="기본 제목">
+                </label>
+                <label for="location">장소:
+                    <input type="text" id="location" value="기본 장소">
+                </label>
+                <label for="startDate">startDate:
+                    <input type="date" id="startDate">
+                </label>
+                <label for="endDate">endDate:
+                    <input type="date" id="endDate">
+                </label>
+                <input type="submit" value="Submit">
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+            </div>
+        </form>
+
+    </div>
+    <div class="container">
+        <h2>
+            <a href="new_travel_record" class="button">새 여행기록 작성</a>
+        </h2>
+    </div>
+
+    <div class="container">
+        <table>
+            <thead>
+            <tr>
+                <th>제목</th>
+                <th>장소</th>
+                <th>시작 날짜</th>
+                <th>종료 날짜</th>
+                <th>동작</th>
+            </tr>
+            </thead>
+            <tbody id="recordList">
+
+            </tbody>
+        </table>
+    </div>
+ {{>layout/footer}}

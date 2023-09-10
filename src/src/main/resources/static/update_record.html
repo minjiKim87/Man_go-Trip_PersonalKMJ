@@ -1,192 +1,201 @@
-<!DOCTYPE html>
-<html lang="en">
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
 
-<head>
-  <meta charset="UTF-8">
-  <title>여행 기록 수정하기</title>
-  <link href="/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/album/">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-</head>
+<!--<head>-->
+<!--  <meta charset="UTF-8">-->
+<!--  <title>여행 기록 수정하기</title>-->
+<!--  <link href="/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">-->
+<!--  <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/album/">-->
+<!--  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
+<!--  <link rel="stylesheet" href="css/styles.css">-->
+<!--</head>-->
 
-<body>
-<h1 class="fw-light">여행 기록 수정하기</h1>
+<!--<body>-->
+<!--<h1 class="fw-light">여행 기록 수정하기</h1>-->
+<!--<div class="container">-->
+<!--  <a id="detailButton" href="" class="button">현재 기록 상세 보기</a>-->
+<!--<a href="view_record_list.html" class="button">여행 기록 리스트로 가기</a>-->
+<!--</div>-->
+<!--<section class="py-5 text-center container">-->
+<!--  <div class="row py-lg-5">-->
+<!--    <div class="col-lg-6 col-md-8 mx-auto">-->
+<!--      <h2>기본 정보</h2>-->
+<!--      <p>제목: <input type="text" id="recordTitleInput" value=""></p>-->
+<!--      <p>장소: <input type="text" id="locationInput" value=""></p>-->
+<!--      <p>시작 날짜: <input type="date" id="startDateInput" value=""></p>-->
+<!--      <p>종료 날짜: <input type="date" id="endDateInput" value=""></p>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
 
-<section class="py-5 text-center container">
-  <div class="row py-lg-5">
-    <div class="col-lg-6 col-md-8 mx-auto">
-      <h2>기본 정보</h2>
-      <p>제목: <input type="text" id="recordTitleInput" value=""></p>
-      <p>장소: <input type="text" id="locationInput" value=""></p>
-      <p>시작 날짜: <input type="date" id="startDateInput" value=""></p>
-      <p>종료 날짜: <input type="date" id="endDateInput" value=""></p>
-    </div>
-  </div>
-</section>
+<!--<div class="album py-5 bg-light">-->
+<!--  <div class="container">-->
+<!--    <h2>비용</h2>-->
+<!--    <p><input type="text" id="costInput" value=""></p>-->
+<!--  </div>-->
 
-<div class="album py-5 bg-light">
-  <div class="container">
-    <h2>비용</h2>
-    <p><input type="text" id="costInput" value=""></p>
+<!--  <div class="container">-->
+<!--    <h2>본문</h2>-->
+<!--    <div id="content"></div>-->
 
-    <h2>본문</h2>
-    <div id="content"></div>
+<!--    <button id="updateButton" class="btn btn-primary">수정</button>-->
 
-    <button id="updateButton" class="btn btn-primary">수정</button>
+<!--  </div>-->
+<!--</div>-->
+<!--<script>-->
 
-  </div>
-</div>
-<script>
+<!--    var recordId; // record content에서도 쓸거라 전역변수로 해줘야됨-->
 
-    var recordId; // record content에서도 쓸거라 전역변수로 해줘야됨
+<!--    $(document).ready(function () {-->
 
-    $(document).ready(function () {
+<!--        var urlParams = new URLSearchParams(window.location.search);-->
+<!--        recordId = urlParams.get('recordId');-->
 
-        var urlParams = new URLSearchParams(window.location.search);
-        recordId = urlParams.get('recordId');
+<!--         $('#detailButton').attr('href', 'view_detail_record.html?recordId=' + recordId);-->
+<!--         //이 여행 기록 상세보기로 가는 버튼-->
 
-        $.get("/fetch-record/" + recordId, function (data) {
-            $('#recordTitleInput').val(data.recordTitle);
-            $('#locationInput').val(data.location);
+<!--        $.get("/fetch-record/" + recordId, function (data) {-->
+<!--            $('#recordTitleInput').val(data.recordTitle);-->
+<!--            $('#locationInput').val(data.location);-->
 
-            var startDate = new Date(data.startDate).toISOString().split('T')[0];
-            var endDate = new Date(data.endDate).toISOString().split('T')[0];
-            $('#startDateInput').val(startDate);
-            $('#endDateInput').val(endDate);
-            $('#costInput').val(data.cost);
-        });
+<!--            var startDate = new Date(data.startDate).toISOString().split('T')[0];-->
+<!--            var endDate = new Date(data.endDate).toISOString().split('T')[0];-->
+<!--            $('#startDateInput').val(startDate);-->
+<!--            $('#endDateInput').val(endDate);-->
+<!--            $('#costInput').val(data.cost);-->
+<!--        });-->
 
-       $.get("/fetch-record-content/" + recordId, function (data) {
-          var contentHTML = "";
-          var startDate = new Date($('#startDateInput').val());
-          var endDate = new Date($('#endDateInput').val());
+<!--       $.get("/fetch-record-content/" + recordId, function (data) {-->
+<!--          var contentHTML = "";-->
+<!--          var startDate = new Date($('#startDateInput').val());-->
+<!--          var endDate = new Date($('#endDateInput').val());-->
 
-          for (var d = startDate; d <= endDate; d.setDate(d.getDate() + 1)) {
-              var currentDate = d.toISOString().split('T')[0];
-              var currentContent = "";
-              for (var i = 0; i < data.length; i++) {
-                  if (data[i].date === currentDate) {
-                      currentContent = data[i].content;
-                      break;
-                  }
-              }
-              contentHTML += '<p><b><input type="date" value="' + currentDate + '"></b>: <input type="text" value="' + currentContent + '"></p>';
-          }
-          $('#content').html(contentHTML);
-      });
-
-
-        $('#updateButton').click(function() {
-            var updatedRecord = {
-                recordTitle: $('#recordTitleInput').val(),
-                location: $('#locationInput').val(),
-                startDate: $('#startDateInput').val(),
-                endDate: $('#endDateInput').val(),
-                cost: $('#costInput').val(),
-                content: []
-            };
-
-            $('#content').children().each(function(index, element) {
-                var date = $(element).find('input[type=date]').val();
-                var content = $(element).find('input[type=text]').val();
-                updatedRecord.content.push({date: date, content: content});
-            });
-
-            $.ajax({
-                url: "/update-record/" + recordId,
-                type: 'PUT',
-                contentType: 'application/json',
-                data: JSON.stringify(updatedRecord),
-                success: function(response) {
-                    alert('Record updated successfully.');
-                },
-                error: function(response) {
-                    alert('Error updating record.');
-                }
-            });
-        });
-
-    });
-
-      $('#updateButton').click(function() {
-      var updatedData = [];
-
-      $('#content').children().each(function(index, element) {
-          var date = $(element).find('input[type=date]').val();
-          var content = $(element).find('input[type=text]').val();
-          updatedData.push({date: date, content: content});
-      });
-
-      sendDataToServer(recordId, updatedData);
-  });
-
-function sendDataToServer(recordId, data) { // date_content랑 약간 다름
-    var totalCount = data.length;
-    var processedCount = 0;
-
-    data.forEach(content => {
-        //빈칸인 경우에는 DB에 그 날짜의 행을 업로드하고 싶지 않다
-         if (!content.content) {
-            processedCount++;
-            if (processedCount === totalCount) {
-                alert("저장 성공!");
-                 location.reload();
-            }
-            return;
-        }
+<!--          for (var d = startDate; d <= endDate; d.setDate(d.getDate() + 1)) {-->
+<!--              var currentDate = d.toISOString().split('T')[0];-->
+<!--              var currentContent = "";-->
+<!--              for (var i = 0; i < data.length; i++) {-->
+<!--                  if (data[i].date === currentDate) {-->
+<!--                      currentContent = data[i].content;-->
+<!--                      break;-->
+<!--                  }-->
+<!--              }-->
+<!--              contentHTML += '<p><b><input type="date" value="' + currentDate + '"></b>: <input type="text" value="' + currentContent + '"></p>';-->
+<!--          }-->
+<!--          $('#content').html(contentHTML);-->
+<!--      });-->
 
 
+<!--        $('#updateButton').click(function() {-->
+<!--            var updatedRecord = {-->
+<!--                recordTitle: $('#recordTitleInput').val(),-->
+<!--                location: $('#locationInput').val(),-->
+<!--                startDate: $('#startDateInput').val(),-->
+<!--                endDate: $('#endDateInput').val(),-->
+<!--                cost: $('#costInput').val(),-->
+<!--                content: []-->
+<!--            };-->
 
-        // 체크하여 record content가 이미 존재하는지 확인
-        $.ajax({
-            type: "GET",
-            url: "/check-record-content",
-            data: {
-                recordId: recordId,
-                date: content.date
-            },
-            success: function(response) {
-                var recordContentId = response;
+<!--            $('#content').children().each(function(index, element) {-->
+<!--                var date = $(element).find('input[type=date]').val();-->
+<!--                var content = $(element).find('input[type=text]').val();-->
+<!--                updatedRecord.content.push({date: date, content: content});-->
+<!--            });-->
 
-                // record content가 이미 존재하면 업데이트, 그렇지 않으면 삽입
-                var url = recordContentId != null ? "/update-record-content/" + recordContentId : "/add-record-content";
-                var type = recordContentId != null ? "PUT" : "POST";
+<!--            $.ajax({-->
+<!--                url: "/update-record/" + recordId,-->
+<!--                type: 'PUT',-->
+<!--                contentType: 'application/json',-->
+<!--                data: JSON.stringify(updatedRecord),-->
+<!--                success: function(response) {-->
+<!--                    alert('Record updated successfully.');-->
+<!--                },-->
+<!--                error: function(response) {-->
+<!--                    alert('Error updating record.');-->
+<!--                }-->
+<!--            });-->
+<!--        });-->
 
-                $.ajax({
-                    type: type,
-                    url: url,
-                    contentType: "application/json; charset=utf-8",
-                    data: JSON.stringify({
-                        recordId: recordId,
-                        content: content.content,
-                        date: content.date
-                    }),
-                    success: function() {
-                        processedCount++;
+<!--    });-->
 
-                        if (processedCount === totalCount) {
-                            alert("저장 성공!");
-                            location.reload();
-                        }
-                    },
-                    error: function(err) {
-                        alert("저장 실패 : " + (err.responseJSON && err.responseJSON.message) || err.responseText || "알 수 없는 오류");
-                    }
-                });
-            },
-            error: function(err) {
-                alert("체크 실패 : " + (err.responseJSON && err.responseJSON.message) || err.responseText || "알 수 없는 오류");
-            }
-        });
-    });
-}
+<!--      $('#updateButton').click(function() {-->
+<!--      var updatedData = [];-->
+
+<!--      $('#content').children().each(function(index, element) {-->
+<!--          var date = $(element).find('input[type=date]').val();-->
+<!--          var content = $(element).find('input[type=text]').val();-->
+<!--          updatedData.push({date: date, content: content});-->
+<!--      });-->
+
+<!--      sendDataToServer(recordId, updatedData);-->
+<!--  });-->
+
+<!--function sendDataToServer(recordId, data) { // date_content랑 약간 다름-->
+<!--    var totalCount = data.length;-->
+<!--    var processedCount = 0;-->
+
+<!--    data.forEach(content => {-->
+<!--        //빈칸인 경우에는 DB에 그 날짜의 행을 업로드하고 싶지 않다-->
+<!--         if (!content.content) {-->
+<!--            processedCount++;-->
+<!--            if (processedCount === totalCount) {-->
+<!--                alert("저장 성공!");-->
+<!--                 location.reload();-->
+<!--            }-->
+<!--            return;-->
+<!--        }-->
 
 
 
+<!--        // 체크하여 record content가 이미 존재하는지 확인-->
+<!--        $.ajax({-->
+<!--            type: "GET",-->
+<!--            url: "/check-record-content",-->
+<!--            data: {-->
+<!--                recordId: recordId,-->
+<!--                date: content.date-->
+<!--            },-->
+<!--            success: function(response) {-->
+<!--                var recordContentId = response;-->
+
+<!--                // record content가 이미 존재하면 업데이트, 그렇지 않으면 삽입-->
+<!--                var url = recordContentId != null ? "/update-record-content/" + recordContentId : "/add-record-content";-->
+<!--                var type = recordContentId != null ? "PUT" : "POST";-->
+
+<!--                $.ajax({-->
+<!--                    type: type,-->
+<!--                    url: url,-->
+<!--                    contentType: "application/json; charset=utf-8",-->
+<!--                    data: JSON.stringify({-->
+<!--                        recordId: recordId,-->
+<!--                        content: content.content,-->
+<!--                        date: content.date-->
+<!--                    }),-->
+<!--                    success: function() {-->
+<!--                        processedCount++;-->
+
+<!--                        if (processedCount === totalCount) {-->
+<!--                            alert("저장 성공!");-->
+<!--                            location.reload();-->
+<!--                        }-->
+<!--                    },-->
+<!--                    error: function(err) {-->
+<!--                        alert("저장 실패 : " + (err.responseJSON && err.responseJSON.message) || err.responseText || "알 수 없는 오류");-->
+<!--                    }-->
+<!--                });-->
+<!--            },-->
+<!--            error: function(err) {-->
+<!--                alert("체크 실패 : " + (err.responseJSON && err.responseJSON.message) || err.responseText || "알 수 없는 오류");-->
+<!--            }-->
+<!--        });-->
+<!--    });-->
+<!--}-->
 
 
-</script>
 
-</body>
 
-</html>
+
+<!--</script>-->
+
+<!--</body>-->
+
+<!--</html>-->

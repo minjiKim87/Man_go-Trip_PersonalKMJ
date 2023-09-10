@@ -78,4 +78,20 @@ public class RecordContentService {
         return recordContentRepository.findByRecords(records);
     }
 
+    //record id로 삭제
+    @Transactional
+    public void deleteContentsByRecordId(Long recordId) {
+
+        Records record = recordsPostsRepository.findById(recordId)
+                .orElseThrow(() -> new IllegalArgumentException("해당 레코드가 없습니다. id=" + recordId));
+
+
+        List<RecordContent> contents = recordContentRepository.findByRecords(record);
+
+
+        recordContentRepository.deleteAll(contents);
+    }
+
+
+
 }

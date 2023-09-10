@@ -1,0 +1,45 @@
+{{>layout/header}}
+    <title>여행 기록 수정하기</title>
+    <link href="/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/album/">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/update_record.js"></script>
+</head>
+
+<body>
+
+{{>layout/nav}}
+
+<h1 class="fw-light">여행 기록 수정하기</h1>
+<div class="container">
+    <a id="detailButton" href="" class="button">현재 기록 상세 보기</a>
+    <a href="view_record_list" class="button">여행 기록 리스트로 가기</a>
+</div>
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h2>기본 정보</h2>
+            <p>제목: <input type="text" id="recordTitleInput" value=""></p>
+            <p>장소: <input type="text" id="locationInput" value=""></p>
+            <p>시작 날짜: <input type="date" id="startDateInput" value=""></p>
+            <p>종료 날짜: <input type="date" id="endDateInput" value=""></p>
+        </div>
+    </div>
+</section>
+
+<div class="album py-5 bg-light">
+    <div class="container">
+        <h2>비용</h2>
+        <p><input type="text" id="costInput" value=""></p>
+    </div>
+
+    <div class="container">
+        <h2>본문</h2>
+        <div id="content"></div>
+
+        <button id="updateButton" class="btn btn-primary">수정</button>
+
+    </div>
+</div>
+{{>layout/footer}}

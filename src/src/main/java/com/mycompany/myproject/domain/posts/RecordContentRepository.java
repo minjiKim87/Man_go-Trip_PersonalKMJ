@@ -15,4 +15,5 @@ public interface RecordContentRepository extends JpaRepository<RecordContent, Lo
 
     List<RecordContent> findByRecords(Records records);
 
+    //void deleteByRecords(Records records);
 }

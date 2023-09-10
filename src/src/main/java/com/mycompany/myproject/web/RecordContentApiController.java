@@ -2,6 +2,8 @@ package com.mycompany.myproject.web;
 
 import com.mycompany.myproject.domain.posts.RecordContent;
 import com.mycompany.myproject.domain.posts.RecordContentRepository;
+import com.mycompany.myproject.domain.posts.Records;
+import com.mycompany.myproject.domain.posts.RecordsPostsRepository;
 import com.mycompany.myproject.service.RecordContentService;
 import com.mycompany.myproject.web.dto.RecordsContentSaveRequestDto;
 import com.mycompany.myproject.web.dto.RecordsContentUpdateRequestDto;
@@ -19,12 +21,15 @@ public class RecordContentApiController {
 
     private final RecordContentRepository recordContentRepository;
     private final RecordContentService recordContentService;
+    private final RecordsPostsRepository recordsPostsRepository;
 
     @Autowired
     public RecordContentApiController(RecordContentRepository recordContentRepository,
-                                      RecordContentService recordContentService) {
+                                      RecordContentService recordContentService,
+                                      RecordsPostsRepository recordsPostsRepository) { // 수정된 부분
         this.recordContentRepository = recordContentRepository;
         this.recordContentService = recordContentService;
+        this.recordsPostsRepository = recordsPostsRepository; // 추가된 부분
     }
 
     @PostMapping("/add-record-content")
@@ -54,5 +59,18 @@ public class RecordContentApiController {
         List<RecordContent> recordContents = recordContentService.fetchRecordContent(recordId);
         return new ResponseEntity<>(recordContents, HttpStatus.OK);
     }
+
+    @DeleteMapping("/delete-record-content/{recordId}")
+    public ResponseEntity<?> deleteRecordContentByRecordId(@PathVariable Long recordId) {
+        try {
+            recordContentService.deleteContentsByRecordId(recordId);
+            return new ResponseEntity<>(HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+
+
 
 }
