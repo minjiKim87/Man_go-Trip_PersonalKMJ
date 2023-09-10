@@ -299,9 +299,9 @@ url이나 매핑도 잘 다 해놓은거같고 get을 안쓰는것 같은데 계
             }
         ```
         
-        서비스가 계속 문제였음. 외래키랑 레포지토리랑 주고받는 형식에 id너무 헷갈려서 계속…
+        서비스가 계속 문제였음. 외래키랑 레포지토리랑 주고받는 형식에 id 너무 헷갈려서 계속…
         
-        1. recordId를 넘겨받으면, recordsPostrepository에서 레코드 id로 record 객체를 넘겨받음 
+        a. recordId를 넘겨받으면, recordsPostrepository에서 레코드 id로 record 객체를 넘겨받음 
         - 이때 RecordsPostsRepository
             
             ```java
@@ -322,7 +322,7 @@ url이나 매핑도 잘 다 해놓은거같고 get을 안쓰는것 같은데 계
             ```
             
         
-        1. 이제 그 넘겨받은 record로 recordContentRepository에서 content들을 찾아서 리스트로 반환받음(  List<RecordContent> findByRecords(Records records);
+        b. 이제 그 넘겨받은 record로 recordContentRepository에서 content들을 찾아서 리스트로 반환받음(  List<RecordContent> findByRecords(Records records);
         - RecordContentRepository
             
             ```java
@@ -348,12 +348,12 @@ url이나 매핑도 잘 다 해놓은거같고 get을 안쓰는것 같은데 계
             ```
             
         
-        1. 그러고 그 리스트를 전부 삭제함
+        c. 그러고 그 리스트를 전부 삭제함
 
 
 
 
-    코멘트 : cascade 선언하면 자동으로 되니까 시도해봐! -> 이 생각을 못했다, 해보자
+    💡 코멘트 : cascade 선언하면 자동으로 되니까 시도해봐! -> 이 생각을 못했다, 해보자💡 
 ```
 @Entity
 public class Records {
