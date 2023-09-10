@@ -7,9 +7,9 @@
 
 </aside>
 
-![Untitled](0909%20%E1%84%87%E1%85%AE%E1%84%90%E1%85%B3%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%85%E1%85%A2%E1%86%B8%20mustache%20delete%204492c4a4c6164f0a96fe617db472a175/Untitled.png)
+<img src="https://github.com/minjiKim87/SpringAWS_Study/assets/68892132/9c09c85e-e971-4ce5-bed9-b8c661f96296.png" alt="Untitled" width="50%">
 
-![Untitled](0909%20%E1%84%87%E1%85%AE%E1%84%90%E1%85%B3%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%85%E1%85%A2%E1%86%B8%20mustache%20delete%204492c4a4c6164f0a96fe617db472a175/Untitled%201.png)
+<img src="https://github.com/minjiKim87/SpringAWS_Study/assets/68892132/44aab974-ff46-4c77-9f29-1e0f81b1e94f.png" alt="Untitled 1" width="50%">
 
 # 1. 부트스트랩
 
@@ -21,9 +21,9 @@
 
 1. `npm install bootstrap@5.3.1`
 
-![Untitled](0909%20%E1%84%87%E1%85%AE%E1%84%90%E1%85%B3%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%85%E1%85%A2%E1%86%B8%20mustache%20delete%204492c4a4c6164f0a96fe617db472a175/Untitled%202.png)
+<img src="https://github.com/minjiKim87/SpringAWS_Study/assets/68892132/858b8a2e-3ff8-47ad-b94e-bf9e0b533ad7.png" alt="Untitled 2" width="50%">
 
-![Untitled](0909%20%E1%84%87%E1%85%AE%E1%84%90%E1%85%B3%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%85%E1%85%A2%E1%86%B8%20mustache%20delete%204492c4a4c6164f0a96fe617db472a175/Untitled%203.png)
+<img src="https://github.com/minjiKim87/SpringAWS_Study/assets/68892132/462e8984-9688-4b96-ae04-92a9c57def2d.png" alt="Untitled 3" width="50%">
 
 # 2. mustache
 
@@ -33,7 +33,8 @@
 
 테스트 통과 & 링크 접속시 보임
 
-![Untitled](0909%20%E1%84%87%E1%85%AE%E1%84%90%E1%85%B3%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%85%E1%85%A2%E1%86%B8%20mustache%20delete%204492c4a4c6164f0a96fe617db472a175/Untitled%204.png)
+<img src="https://github.com/minjiKim87/SpringAWS_Study/assets/68892132/50150d9e-34fd-41ca-b123-4c971a08b4cb.png" alt="Untitled 4" width="50%">
+
 
 1. build.gradle 파일에 `implementation('org.springframework.boot:spring-boot-starter-mustache')`
 2. 테스트 코드 구현(test/…/web아래)
@@ -94,7 +95,7 @@ public class IndexController {
 
 </aside>
 
-![Untitled](0909%20%E1%84%87%E1%85%AE%E1%84%90%E1%85%B3%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%85%E1%85%A2%E1%86%B8%20mustache%20delete%204492c4a4c6164f0a96fe617db472a175/Untitled%205.png)
+<img src="https://github.com/minjiKim87/SpringAWS_Study/assets/68892132/4a34cb16-5a7e-453e-96e3-d31494a4ff26.png" alt="Untitled 5" width="50%">
 
 - 헤더
 
@@ -200,21 +201,22 @@ Request method 'GET' not supported
 
 </aside>
 
-url이나 매핑도 잘 다 해놓은거같고 get을 안쓰는것 같은데 계속 get을 쓴다네… 
+네트워크 창에서 보면 url/id 는 잘 넘겨주는데 
+url이나 매핑도 잘 다 해놓은거같고 get을 안쓰는것 같은데 계속 get을 쓴다.
+코드 검토 시 get을 쓰는 부분은 없어보이는데, 아마 관련 부분에서 구현을 잘못한것 같다.
 
-네트워크 창에서 보면 url/id 는 잘 넘어가는데 ㅜㅜ 
 
-![Untitled](0909%20%E1%84%87%E1%85%AE%E1%84%90%E1%85%B3%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%85%E1%85%A2%E1%86%B8%20mustache%20delete%204492c4a4c6164f0a96fe617db472a175/Untitled%206.png)
+<img src="https://github.com/minjiKim87/SpringAWS_Study/assets/68892132/0872c341-7754-4053-a8d1-aae0cff02a3f.png" alt="Untitled 6" width="50%">
 
-![Untitled](0909%20%E1%84%87%E1%85%AE%E1%84%90%E1%85%B3%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%85%E1%85%A2%E1%86%B8%20mustache%20delete%204492c4a4c6164f0a96fe617db472a175/Untitled%207.png)
+<img src="https://github.com/minjiKim87/SpringAWS_Study/assets/68892132/b6eabcc8-bdfb-462a-b954-e647e85feca4.png" alt="Untitled 7" width="50%">
 
-## delete 계속 안되다가 십분전에 성공함 와!
+## 성공!
 
 흐름
 
 1. 리스트에서 record를 삭제하고 싶음 → cascade로 record_content도 지워줘야함
 
-![Untitled](0909%20%E1%84%87%E1%85%AE%E1%84%90%E1%85%B3%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%85%E1%85%A2%E1%86%B8%20mustache%20delete%204492c4a4c6164f0a96fe617db472a175/Untitled%208.png)
+<img src="https://github.com/minjiKim87/SpringAWS_Study/assets/68892132/16e67717-4703-44ba-894b-7106bb71acc7.png" alt="Untitled 8" width="50%">
 
 1. js 파일에서 record-content 함수를 만들어두고, 버튼 눌렀을때 먼저 recordcontent삭제 하고 record 삭제하도록 함
     
@@ -344,18 +346,19 @@ url이나 매핑도 잘 다 해놓은거같고 get을 안쓰는것 같은데 계
             
         
         1. 그러고 그 리스트를 전부 삭제함
-    
-    @Manytoone
-    
-    쩌구 (record_id)
-    
-    Record records < < 객체 자체선언 
-    
-    이건 맞구나 
-    
-    cascade 
+
+    코멘트 : cascade 선언하면 자동으로 되니까 시도해봐! -> 이 생각을 못했다, 해보자
+```
+@Entity
+public class Records {
+    ...
+
+    @OneToMany(mappedBy = "records", cascade = CascadeType.REMOVE)
+    private List<RecordContent> recordContents;
+}
+```
     
     # 할것
     
-    1. 원래 했었는데 수정 반영 안되는것(여기는 mustache하면서 문제같긴함)
+    1. 원래 했었는데 수정 반영 안되는것(여기는 mustache로 바꿔주면서 생긴 경로 문제 같기는 하다)
     2. 부트스트랩 css 적용
