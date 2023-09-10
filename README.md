@@ -5,7 +5,7 @@
 ## 2023.06~
 **스프링 기반 여행 웹 사이트(Mango) 개발 프로젝트**  
 
-
+- [0_주제+시나리오+UI+DB스키마 회의](https://github.com/minjiKim87/Man_go-Trip_PersonalKMJ/blob/48ed2f7bea0a5ca63ce83b5e83b941af11d06b48/0_%EC%A3%BC%EC%A0%9C%2B%EC%8B%9C%EB%82%98%EB%A6%AC%EC%98%A4%2BUI%2BDB%EC%8A%A4%ED%82%A4%EB%A7%88%20%ED%9A%8C%EC%9D%98.md)
 - [1_오류 해결_2308](https://github.com/minjiKim87/Man_go-Trip_PersonalKMJ/blob/b4a9aea86037c2e6cc8eaf9eab9847d14c34ee6a/2308_1_%EC%98%A4%EB%A5%98%20%ED%95%B4%EA%B2%B0.md)
 - [2_DB 연결 및 기능 추가_2308](https://github.com/minjiKim87/Man_go-Trip_PersonalKMJ/blob/b4a9aea86037c2e6cc8eaf9eab9847d14c34ee6a/2308_2_DB%20%EC%97%B0%EA%B2%B0%20%EB%B0%8F%20%EA%B8%B0%EB%8A%A5%20%EC%B6%94%EA%B0%80.md)
 - [3_기능(record db 작용, record_content)_2308](https://github.com/minjiKim87/Man_go-Trip_PersonalKMJ/blob/b4a9aea86037c2e6cc8eaf9eab9847d14c34ee6a/2308_3_0819%20%EA%B8%B0%EB%8A%A5(record%20db%20%EC%9E%91%EC%9A%A9%2C%20record_content).md)
