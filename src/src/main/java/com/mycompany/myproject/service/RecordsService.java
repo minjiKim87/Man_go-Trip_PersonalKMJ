@@ -26,6 +26,7 @@ public class RecordsService {
         return recordsPostsRepository.findAll();
     }
 
+    @Transactional
     public Long update(Long recordId, RecordsSaveRequestDto requestDto) {
         Records records = recordsPostsRepository.findById(recordId)
                 .orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다. id=" +  recordId));
