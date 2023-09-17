@@ -1,18 +1,19 @@
 package com.mycompany.myproject.service;
 
+import com.mycompany.myproject.domain.posts.RecordContent;
+import com.mycompany.myproject.domain.posts.Records;
 import com.mycompany.myproject.domain.posts.RecordsPostsRepository;
+import com.mycompany.myproject.web.dto.RecordsSaveRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import com.mycompany.myproject.web.dto.RecordsSaveRequestDto;
-
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 
 @RequiredArgsConstructor
 @Service
-
 public class RecordsService {
+
     private final RecordsPostsRepository recordsPostsRepository;
 
     @Transactional
@@ -20,37 +21,35 @@ public class RecordsService {
         return recordsPostsRepository.save(requestDto.toEntity()).getRecordId();
     }
 
-   /* @Transactional
-    public int update(int record_id, PostsUpdateRequestDto requestDto) {
-        Posts posts = recordsPostsRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다. id=" + id));
-
-        posts.update(requestDto.getTitle(), requestDto.getContent());
-
-        return record_id;
+    @Transactional(readOnly = true)
+    public List<Records> fetchAllRecords() {
+        return recordsPostsRepository.findAll();
     }
 
     @Transactional
-    public void delete (int record_id) {
-        Posts records = recordsPostsRepository.findById(record_id)
-                .orElseThrow(() -> new IllegalArgumentException("해당 사용자(기록이?)가 없습니다. id=" + record_id));
+    public Long update(Long recordId, RecordsSaveRequestDto requestDto) {
+        Records records = recordsPostsRepository.findById(recordId)
+                .orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다. id=" +  recordId));
+        records.update(requestDto.getRecordTitle(), requestDto.getLocation(), requestDto.getStartDate(), requestDto.getEndDate());
+        return recordId;
+    }
 
-        recordsPostsRepository.delete(records);
+    @Transactional
+    public void delete(Long recordId) {
+        Records records = recordsPostsRepository.findById(recordId)
+                .orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다. id=" +  recordId));
+
+        recordsPostsRepository.deleteById(recordId);
     }
 
     @Transactional(readOnly = true)
-    public RecordsResponseDto findByRecordId(int record_id) {
-        Records entity = recordsRepository.findByRecordId(record_id)
-                .orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다. id=" + record_id));
-
-        return new RecordsResponseDto(entity);
+    public Records fetchRecordById(Long recordId) {
+        return recordsPostsRepository.findById(recordId)
+                .orElseThrow(() -> new IllegalArgumentException("해당 기록이 없습니다. id=" + recordId));
     }
-*/
-    /*Post 리스트 받는것*/
-   /* @Transactional(readOnly = true)
-    public List<PostsListResponseDto> findAllDesc() {
-        return postsRepository.findAllDesc().stream()
-                .map(PostsListResponseDto::new)
-                .collect(Collectors.toList());
-    }*/
+
+
+
 }
+
+

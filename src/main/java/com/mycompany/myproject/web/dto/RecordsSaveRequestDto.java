@@ -12,29 +12,29 @@ import java.util.List;
 @NoArgsConstructor
 public class RecordsSaveRequestDto {
 
-    private Cost cost_id;
-    private String record_title;
-
-
+    //private Cost costId;
+    private String recordTitle;
 
     private String location;
-    private Date start_date;
-    private Date end_date;
+    private Date startDate;
+    private Date endDate;
     private List<RecordsContentSaveRequestDto> recordContents;
 
     @Builder
-    public RecordsSaveRequestDto(String record_title, String location){
-
-        this.record_title = record_title;
+    public RecordsSaveRequestDto(String recordTitle, String location, Date startDate, Date endDate){
+        this.recordTitle = recordTitle;
         this.location = location;
+        this.startDate = startDate;
+        this.endDate = endDate;
 
     }
 
     public Records toEntity(){
-        //DTO 객체를 엔티티 객체로 변환
         return Records.builder()
-                .recordTitle(record_title)
+                .recordTitle(recordTitle)
                 .location(location)
+                .startDate(startDate)
+                .endDate(endDate)
                 .build();
     }
 

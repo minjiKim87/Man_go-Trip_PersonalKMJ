@@ -1,39 +1,45 @@
 package com.mycompany.myproject.web;
 
-import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.*;
+import com.mycompany.myproject.domain.posts.Records;
+import com.mycompany.myproject.service.RecordsService;
 import com.mycompany.myproject.web.dto.RecordsSaveRequestDto;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
-@RequiredArgsConstructor
+import java.util.List;
+
 @RestController
 public class RecordsPostApiController {
 
-    private final com.mycompany.myproject.service.RecordsService RecordsService;
+    @Autowired
+    private RecordsService recordsService;
 
-    @PostMapping("/api/v1/Records")
-    public long save(@RequestBody RecordsSaveRequestDto requestDto) {
-        return RecordsService.save(requestDto);
+    @GetMapping("/fetch-records")
+    public List<Records> fetchAllRecords() {
+        return recordsService.fetchAllRecords();
     }
 
-    /*여기 아래는 각각 update, delete 등등 페이지 작성을 해야된다*/
-   /* @PutMapping("/api/v1/Records/{record_record_id}")
-    public Long update(@PathVariable Long record_id, @RequestBody RecordsUpdateRequestDto requestDto) {
-        return RecordsService.update(record_id, requestDto);
+    @GetMapping("/fetch-record/{recordId}")
+    public Records fetchRecordById(@PathVariable Long recordId) {
+        return recordsService.fetchRecordById(recordId);
     }
 
-    @DeleteMapping("/api/v1/Records/{record_id}")
-    public Long delete(@PathVariable Long record_id) {
-        RecordsService.delete(record_id);
-        return record_id;
+
+    @PostMapping("/add-record")
+    public Long createRecord(@RequestBody RecordsSaveRequestDto requestDto) {
+        return recordsService.save(requestDto);
     }
 
-    @GetMapping("/api/v1/Records/{record_id}")
-    public RecordsResponseDto findByRecordId(@PathVariable Long record_id) {
-        return RecordsService.findByRecordId(record_id);
+
+    @PutMapping("/update-record/{id}")
+    public Long updateRecord(@PathVariable Long id, @RequestBody RecordsSaveRequestDto requestDto) {
+        return recordsService.update(id, requestDto);
     }
 
-    @GetMapping("/api/v1/Records/list")
-    public List<RecordsListResponseDto> findAll() {
-        return RecordsService.findAllDesc();
-    }*/
+    @DeleteMapping("/delete-record/{id}")
+    public void deleteRecord(@PathVariable Long id) {
+        recordsService.delete(id);
+    }
+
+
 }

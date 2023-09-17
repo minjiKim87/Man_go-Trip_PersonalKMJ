@@ -5,19 +5,16 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Getter
 @NoArgsConstructor
 @Entity
+//@Table(name = "records")
 public class Records extends BaseTimeEntity {
 
-    //private final int cost_id;
+    //private final long cost_id;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long recordId;
@@ -52,7 +49,7 @@ public class Records extends BaseTimeEntity {
         this.endDate = endDate;
     }
 
-    public void update(int recordId,String recordTitle, String location, Date startDate, Date  endDate) {
+    public void update(String recordTitle, String location, Date startDate, Date  endDate) {
        // this.cost_id = cost_id;
         this.recordId = recordId;
         this.recordTitle = recordTitle;
